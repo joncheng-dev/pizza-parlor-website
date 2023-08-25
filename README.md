@@ -73,6 +73,7 @@ Order {
   pizzas: 2: Pizza {toppings: [], size: "large", id: 2}
 }
 
+
 Describe: Pizza.prototype.calculateCost
 
 Test 1: "It should call method calculateCost on a Pizza object, calculate the cost of the pizza, and save into property 'this.cost'."
@@ -83,4 +84,16 @@ pieSpecifications.calculateCost();
 pieSpecifications;
 Expected Output:
 Pizza {toppings: ["mushrooms", "olives"], size: "medium", cost: 12}
+
+
+Describe: Order.prototype.selectPizzaById
+
+Test 1: "It should call method selectPizzaById on a Order object, pass in parameter of id, and return false, meaning that the Pizza object with that id value cannot be found."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne.selectPizzaById(3);
+Expected Output:
+false;
 ```
