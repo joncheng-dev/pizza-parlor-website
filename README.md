@@ -106,4 +106,20 @@ customerOne.addPizzaToOrder(pieSpecifications);
 customerOne.selectPizzaById(1);
 Expected Output:
 Pizza {toppings: ["mushrooms", "olives"], size: "medium", id: 1}
+
+
+Describe: Order.prototype.deletePizzaFromOrder
+
+Test 1: "It will remove the Pizza object from the property 'this.pizzas' using the id passed in."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+pieSpecifications.toppings = ["mushrooms", "olives"];
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne.deletePizzaFromOrder(1);
+Expected Output:
+true;
+
+Then if we call customerOne again, it will be:
+Order {pizzas = {...}, currentId = 1};
 ```
