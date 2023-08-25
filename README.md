@@ -25,10 +25,10 @@ let pieSpecifications = new Pizza();
 typeof pieSpecifications;
 Expected Output: object
 
-Test 2: "It should return a Pizza object containing a property 'this.toppings', an empty object, and take a parameter of 'size' which is saved into property 'this.pizzaSize'."
+Test 2: "It should return a Pizza object containing a property 'this.toppings', an empty array, and take a parameter of 'size' which is saved into property 'this.pizzaSize'."
 Code:
 let pieSpecifications = new Pizza("medium");
 pieSpecifications;
 Expected Output:
-Pizza {toppings: {...}, pizzaSize: "medium"}
+Pizza {toppings: [], pizzaSize: "medium"}
 ```

@@ -4,7 +4,7 @@ function Order() {
 }
 
 function Pizza(size) {
-  this.toppings = {};
+  this.toppings = [];
   this.pizzaSize = size;
 }
 
