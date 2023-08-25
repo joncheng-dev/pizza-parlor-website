@@ -1,5 +1,7 @@
 // Business Logic
-function Order() {}
+function Order() {
+  this.pizzas = {};
+}
 
 let customerOne = new Order();
 
