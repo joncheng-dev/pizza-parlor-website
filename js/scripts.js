@@ -90,11 +90,17 @@ function formLoader() {
 
 function userFormSubmissionHandler(event) {
   event.preventDefault();
-
+  //Initialize new object to hold pizza instances. If expand functionality later, allow for more customers
   let customerOne = new Order();
-  let result = getUserSelectedToppings();
-  console.log(result);
-
+  // Get user input from form
+  let userToppings = getUserSelectedToppings();
   const userPizzaSize = getUserSelectedSize();
-  console.log("Selected size is:", userPizzaSize);
+  // A pizza request is made by the customer
+  let aPizza = new Pizza(userPizzaSize);
+  aPizza.toppings = userToppings;
+  console.log(aPizza);
+  // Add pizza to the order
+  customerOne.addPizzaToOrder(aPizza);
+
+  console.log(customerOne);
 }
