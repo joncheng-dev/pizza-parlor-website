@@ -20,7 +20,26 @@ function Pizza(size) {
   this.pizzaSize = size;
 }
 
+Pizza.prototype.calculateCost = function () {
+  // Base cost of a Pizza is 5.
+  let totalCost = 5;
+  // Cost per added topping is 1.
+  totalCost += this.toppings.length * 1;
+  // Cost of pizzas: small (+0), medium (+5), large (+10)
+  if (this.pizzaSize === "medium") {
+    totalCost += 5;
+  } else if (this.pizzaSize === "large") {
+    totalCost += 10;
+  } else {
+    totalCost += 0;
+  }
+  this.cost = totalCost;
+};
+
 let customerOne = new Order();
+
 let pieSpecifications = new Pizza("medium");
+pieSpecifications.toppings = ["mushrooms", "olives"];
+
 let anotherPieToAdd = new Pizza("large");
 // User Interface Logic
