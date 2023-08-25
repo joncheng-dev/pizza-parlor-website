@@ -57,4 +57,19 @@ Order {
 pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
 currentId: 1;
 }
+
+Test 2: "It should add two pizzas, both with unique ids."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+let anotherPieToAdd = new Pizza("large");
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne.addPizzaToOrder(anotherPieToAdd);
+customerOne;
+Expected Output:
+Order {
+  currentId: 2;
+  pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
+  pizzas: 2: Pizza {toppings: [], pizzaSize: "large", id: 2}
+}
 ```
