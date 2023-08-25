@@ -115,4 +115,6 @@ function userFormSubmissionHandler(event) {
   customerOne.addPizzaToOrder(aPizza);
   // Display results to User
   displayPizzaItemized(aPizza);
+  // Resets form input
+  document.getElementById("customize-pizza-form").reset();
 }

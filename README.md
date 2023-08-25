@@ -1,4 +1,28 @@
-Tests:
+# _Pizza Parlor Website_
+
+#### By _**Jonathan Cheng**_
+
+#### _This website allows users to customize a pizza using toppings of their choosing, and to select a size. The customer may add the pizza to their order, which displays the pizza itemized with its cost._
+
+## Technologies Used
+
+- _HTML_
+- _CSS_
+- _Bootstrap_
+- _JavaScript_
+- _Web APIs_
+
+## Description
+
+_This is my independent project for Week 4 of Epicodus, demonstrating my abilities in object oriented JavaScript using constructors and prototypes. Specifically, constructors are used to keep track of 'pizza objects' created when the user submits a form. Prototypes, or methods are called on the pizza objects to update their properties. Also being focused on is Test Driven Development (TDD). I used TDD for every part of the business logic. Tests are written in this README below. The app uses HTML, CSS, and Bootstrap for the website appearance, and JavaScript for the events._
+
+## Setup/Installation Requirements
+
+- _Clone this repository from GitHub: https://github.com/joncheng-dev/pizza-parlor-website.git_
+- _Navigate to the project's root directory._
+- _Open index.html in your browser._
+
+## Tests:
 
 ```javascript
 Describe: Order object constructor
@@ -123,3 +147,34 @@ true;
 Then if we call customerOne again, it will be:
 Order {pizzas = {...}, currentId = 1};
 ```
+
+## Known Bugs
+
+- _Currently viewing is not optimized for mobile._
+- _After clicking submit, cost column does not line up with itemized pizza entry under "My Order"._
+- _Checkout button currently does not work._
+- _Quantity is currently hard coded as 1._
+
+## License
+
+_MIT License_
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Copyright (c) _2023_ _Jonathan Cheng_
