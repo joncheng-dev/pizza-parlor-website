@@ -96,4 +96,14 @@ customerOne.addPizzaToOrder(pieSpecifications);
 customerOne.selectPizzaById(3);
 Expected Output:
 false;
+
+Test 1b: "It should call method selectPizzaById on a Order object, pass in parameter of id, and return the Pizza object."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+pieSpecifications.toppings = ["mushrooms", "olives"];
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne.selectPizzaById(1);
+Expected Output:
+Pizza {toppings: ["mushrooms", "olives"], size: "medium", id: 1}
 ```
