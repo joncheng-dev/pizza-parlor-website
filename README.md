@@ -70,7 +70,7 @@ Expected Output:
 Order {
   currentId: 2;
   pizzas: 1: Pizza {toppings: [], size: "medium", id: 1}
-  pizzas: 2: Pizza {toppings: [], size: "large", id: 2}
+          2: Pizza {toppings: [], size: "large", id: 2}
 }
 
 
