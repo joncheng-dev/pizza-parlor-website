@@ -15,3 +15,13 @@ body {
   background-color: lightcyan;
   border: 2px black dotted;
 }
+
+#column-size {
+  background-color: lightcyan;
+  border: 3px black dotted;
+}
+
+#column-quantity {
+  background-color: lightcyan;
+  border: 3px black dotted;
+}

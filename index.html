@@ -23,15 +23,41 @@
       <div class="row">
         <div class="col-8">
           <h3>Create Your Own Pizza!</h3>
-          <form>
+          <form id="customize-pizza-form">
             <div class="row">
               <div class="col-4">
                 <h5>TOPPINGS</h5>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="mushrooms" id="firstCheckbox" />
+                    <label class="form-check-label" for="firstCheckbox">Mushrooms</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="olives" id="secondCheckbox" />
+                    <label class="form-check-label" for="secondCheckbox">Olives</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="pepperoni" id="thirdCheckbox" />
+                    <label class="form-check-label" for="thirdCheckbox">Pepperoni</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="pineapple" id="firstCheckbox" />
+                    <label class="form-check-label" for="firstCheckbox">Pineapple</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="sausage" id="secondCheckbox" />
+                    <label class="form-check-label" for="secondCheckbox">Sausage</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="spinach" id="thirdCheckbox" />
+                    <label class="form-check-label" for="thirdCheckbox">Spinach</label>
+                  </li>
+                </ul>
               </div>
-              <div class="col-4">
+              <div class="col-5" id="column-size">
                 <h5>SIZE</h5>
               </div>
-              <div class="col-4">
+              <div class="col-3" id="column-quantity">
                 <h5>QUANTITY</h5>
               </div>
             </div>
