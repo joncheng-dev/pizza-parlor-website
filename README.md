@@ -72,4 +72,15 @@ Order {
   pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
   pizzas: 2: Pizza {toppings: [], pizzaSize: "large", id: 2}
 }
+
+Describe: Pizza.prototype.calculateCost
+
+Test 1: "It should call method calculateCost on a Pizza object, calculate the cost of the pizza, and save into property 'this.cost'."
+Code:
+let pieSpecifications = new Pizza("medium");
+pieSpecifications.toppings = ["mushrooms", "olives"];
+pieSpecifications.calculateCost();
+pieSpecifications;
+Expected Output:
+Pizza {toppings: ["mushrooms", "olives"], pizzaSize: "medium", cost: 12}
 ```
