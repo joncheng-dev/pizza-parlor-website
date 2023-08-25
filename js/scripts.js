@@ -14,8 +14,15 @@ Order.prototype.addPizzaToOrder = function (pizzaSpecification) {
   this.pizzas[pizzaSpecification.id] = pizzaSpecification;
 };
 
+Order.prototype.selectPizzaById = function (id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  } else {
+    return this.pizzas[id];
+  }
+};
+
 // Business Logic for Pizzas
-// Do I change toppings to a necessary argument for this constructor?
 function Pizza(pizzaSize) {
   this.toppings = [];
   this.size = pizzaSize;
@@ -37,10 +44,11 @@ Pizza.prototype.calculateCost = function () {
   this.cost = totalCost;
 };
 
+// User Interface Logic
+// Temporary saves for testing
 let customerOne = new Order();
 
 let pieSpecifications = new Pizza("medium");
 pieSpecifications.toppings = ["mushrooms", "olives"];
 
 let anotherPieToAdd = new Pizza("large");
-// User Interface Logic
