@@ -1,8 +1,10 @@
-// Business Logic
+// Business Logic for Orders
 function Order() {
   this.pizzas = {};
+  this.currentId = 0;
 }
 
+// Business Logic for Pizzas
 function Pizza(size) {
   this.toppings = [];
   this.pizzaSize = size;
