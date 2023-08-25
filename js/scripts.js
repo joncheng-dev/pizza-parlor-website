@@ -74,11 +74,13 @@ function getUserSelectedSize() {
 }
 
 function displayPizzaItemized(addedPizza) {
+  // Set up elements for displaying information
   const ulElementSize = document.createElement("ul");
   const liElementSize = document.createElement("li");
+  // Display pizza size
   liElementSize.append(addedPizza.size + " size");
   ulElementSize.append(liElementSize);
-  // Add each of the toppings
+  // Display each of the toppings
   const ulElementToppings = document.createElement("ul");
   addedPizza.toppings.forEach(function (topping) {
     const liElementTopping = document.createElement("li");
