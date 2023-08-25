@@ -15,4 +15,13 @@ let customerOne = new Order();
 customerOne;
 Expected Output:
 Order {pizzas: {...}}
+
+
+Describe: Pizza object constructor
+
+Test 1: "It should return an object of type Pizza."
+Code:
+let pieSpecifications = new Pizza();
+typeof pieSpecifications;
+Expected Output: object
 ```
