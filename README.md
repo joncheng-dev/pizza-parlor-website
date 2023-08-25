@@ -37,6 +37,7 @@ Describe: Order.prototype.assignId
 
 Test 1: "It should call method assignId on an Order object and increment the currentId property by 1."
 Code:
+let customerOne = new Order();
 customerOne.assignId();
 customerOne;
 Expected Output:
