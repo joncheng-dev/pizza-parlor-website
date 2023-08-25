@@ -22,6 +22,14 @@ Order.prototype.selectPizzaById = function (id) {
   }
 };
 
+Order.prototype.deletePizzaFromOrder = function (id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  }
+  delete this.pizzas[id];
+  return true;
+};
+
 // Business Logic for Pizzas
 function Pizza(pizzaSize) {
   this.toppings = [];
