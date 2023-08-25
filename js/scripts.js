@@ -22,5 +22,5 @@ function Pizza(size) {
 
 let customerOne = new Order();
 let pieSpecifications = new Pizza("medium");
-
+let anotherPieToAdd = new Pizza("large");
 // User Interface Logic

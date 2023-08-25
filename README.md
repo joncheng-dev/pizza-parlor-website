@@ -58,7 +58,7 @@ pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
 currentId: 1;
 }
 
-Test 2: "It should add two pizzas, both with unique ids."
+Test 1b: "It should add two pizzas, both with unique ids."
 Code:
 let customerOne = new Order();
 let pieSpecifications = new Pizza("medium");
