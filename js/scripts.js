@@ -53,14 +53,6 @@ Pizza.prototype.calculateCost = function () {
 };
 
 // User Interface Logic
-// Temporary saves for testing
-// let customerOne = new Order();
-
-// let pieSpecifications = new Pizza("medium");
-// pieSpecifications.toppings = ["mushrooms", "olives"];
-
-// let anotherPieToAdd = new Pizza("large");
-
 function getUserSelectedToppings() {
   let userSelectedToppings = [];
   let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
@@ -79,6 +71,27 @@ function getUserSelectedSize() {
     }
   }
   return userSelectedPizzaSize;
+}
+
+function displayPizzaItemized(addedPizza) {
+  const ulElementSize = document.createElement("ul");
+  const liElementSize = document.createElement("li");
+  liElementSize.append(addedPizza.size + " size");
+  ulElementSize.append(liElementSize);
+  // Add each of the toppings
+  const ulElementToppings = document.createElement("ul");
+  addedPizza.toppings.forEach(function (topping) {
+    const liElementTopping = document.createElement("li");
+    liElementTopping.append(topping);
+    ulElementToppings.append(liElementTopping);
+  });
+  document.getElementById("itemized-order").append(ulElementSize);
+  ulElementSize.append(ulElementToppings);
+  // Display cost
+  addedPizza.calculateCost();
+  const pElementSubtotalCost = document.createElement("p");
+  pElementSubtotalCost.append(addedPizza.cost);
+  document.getElementById("itemized-order-cost").append(pElementSubtotalCost);
 }
 
 window.addEventListener("load", formLoader);
@@ -101,18 +114,5 @@ function userFormSubmissionHandler(event) {
   // Add pizza to the order
   customerOne.addPizzaToOrder(aPizza);
   // Display results to User
-  const ulElementSize = document.createElement("ul");
-  const liElementSize = document.createElement("li");
-  liElementSize.append(aPizza.size + " size");
-  ulElementSize.append(liElementSize);
-  console.log(aPizza.size);
-  // Add each of the toppings
-  const ulElementToppings = document.createElement("ul");
-  aPizza.toppings.forEach(function (topping) {
-    const liElementTopping = document.createElement("li");
-    liElementTopping.append(topping);
-    ulElementToppings.append(liElementTopping);
-  });
-  document.getElementById("itemized-order").append(ulElementSize);
-  ulElementSize.append(ulElementToppings);
+  displayPizzaItemized(aPizza);
 }
