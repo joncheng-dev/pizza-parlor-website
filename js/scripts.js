@@ -9,6 +9,11 @@ Order.prototype.assignId = function () {
   return this.currentId;
 };
 
+Order.prototype.addPizzaToOrder = function (pizzaSpecification) {
+  pizzaSpecification.id = this.assignId();
+  this.pizzas[pizzaSpecification.id] = pizzaSpecification;
+};
+
 // Business Logic for Pizzas
 function Pizza(size) {
   this.toppings = [];
