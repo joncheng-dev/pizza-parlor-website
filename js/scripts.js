@@ -54,9 +54,47 @@ Pizza.prototype.calculateCost = function () {
 
 // User Interface Logic
 // Temporary saves for testing
-let customerOne = new Order();
+// let customerOne = new Order();
 
-let pieSpecifications = new Pizza("medium");
-pieSpecifications.toppings = ["mushrooms", "olives"];
+// let pieSpecifications = new Pizza("medium");
+// pieSpecifications.toppings = ["mushrooms", "olives"];
 
-let anotherPieToAdd = new Pizza("large");
+// let anotherPieToAdd = new Pizza("large");
+
+function getUserSelectedToppings() {
+  let userSelectedToppings = [];
+  let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+  for (let i = 0; i < checkboxes.length; i++) {
+    userSelectedToppings.push(checkboxes[i].value);
+  }
+  return userSelectedToppings;
+}
+
+function getUserSelectedSize() {
+  let userSelectedPizzaSize;
+  let radioButtons = document.getElementsByName("btnradio");
+  for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      userSelectedPizzaSize = radioButtons[i].value;
+    }
+  }
+  return userSelectedPizzaSize;
+}
+
+window.addEventListener("load", formLoader);
+
+function formLoader() {
+  let userForm = document.getElementById("customize-pizza-form");
+  userForm.addEventListener("submit", userFormSubmissionHandler);
+}
+
+function userFormSubmissionHandler(event) {
+  event.preventDefault();
+
+  let customerOne = new Order();
+  let result = getUserSelectedToppings();
+  console.log(result);
+
+  const userPizzaSize = getUserSelectedSize();
+  console.log("Selected size is:", userPizzaSize);
+}

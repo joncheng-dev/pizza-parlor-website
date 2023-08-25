@@ -8,20 +8,10 @@ body {
 
 .col-8 {
   background-color: lightgray;
-  border: 3px black dotted;
+  border: 1px black dotted;
 }
 
 .col-4 {
   background-color: lightcyan;
-  border: 2px black dotted;
-}
-
-#column-size {
-  background-color: lightcyan;
-  border: 3px black dotted;
-}
-
-#column-quantity {
-  background-color: lightcyan;
-  border: 3px black dotted;
+  border: 1px black dotted;
 }
