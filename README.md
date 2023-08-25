@@ -43,4 +43,18 @@ customerOne;
 Expected Output:
 Order {pizzas: {…}, currentId: 1}
 
+
+Describe: Order.prototype.addPizzaToOrder
+
+Test 1: "It should call method addPizzaToOrder on an instance of an Order object, take an argument 'pizzaSpecification', assign an id to it, and then add it to the 'this.pizzas' in the Order object."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne;
+Expected Output:
+Order {
+pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
+currentId: 1;
+}
 ```
