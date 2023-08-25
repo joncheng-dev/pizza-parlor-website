@@ -25,12 +25,12 @@ let pieSpecifications = new Pizza();
 typeof pieSpecifications;
 Expected Output: object
 
-Test 2: "It should return a Pizza object containing a property 'this.toppings', an empty array, and take a parameter of 'size' which is saved into property 'this.pizzaSize'."
+Test 2: "It should return a Pizza object containing a property 'this.toppings', an empty array, and take a parameter of 'size' which is saved into property 'this.size'."
 Code:
 let pieSpecifications = new Pizza("medium");
 pieSpecifications;
 Expected Output:
-Pizza {toppings: [], pizzaSize: "medium"}
+Pizza {toppings: [], size: "medium"}
 
 
 Describe: Order.prototype.assignId
@@ -54,7 +54,7 @@ customerOne.addPizzaToOrder(pieSpecifications);
 customerOne;
 Expected Output:
 Order {
-pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
+pizzas: 1: Pizza {toppings: [], size: "medium", id: 1}
 currentId: 1;
 }
 
@@ -69,8 +69,8 @@ customerOne;
 Expected Output:
 Order {
   currentId: 2;
-  pizzas: 1: Pizza {toppings: [], pizzaSize: "medium", id: 1}
-  pizzas: 2: Pizza {toppings: [], pizzaSize: "large", id: 2}
+  pizzas: 1: Pizza {toppings: [], size: "medium", id: 1}
+  pizzas: 2: Pizza {toppings: [], size: "large", id: 2}
 }
 
 Describe: Pizza.prototype.calculateCost
@@ -82,5 +82,5 @@ pieSpecifications.toppings = ["mushrooms", "olives"];
 pieSpecifications.calculateCost();
 pieSpecifications;
 Expected Output:
-Pizza {toppings: ["mushrooms", "olives"], pizzaSize: "medium", cost: 12}
+Pizza {toppings: ["mushrooms", "olives"], size: "medium", cost: 12}
 ```

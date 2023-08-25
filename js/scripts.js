@@ -15,9 +15,10 @@ Order.prototype.addPizzaToOrder = function (pizzaSpecification) {
 };
 
 // Business Logic for Pizzas
-function Pizza(size) {
+// Do I change toppings to a necessary argument for this constructor?
+function Pizza(pizzaSize) {
   this.toppings = [];
-  this.pizzaSize = size;
+  this.size = pizzaSize;
 }
 
 Pizza.prototype.calculateCost = function () {
@@ -26,9 +27,9 @@ Pizza.prototype.calculateCost = function () {
   // Cost per added topping is 1.
   totalCost += this.toppings.length * 1;
   // Cost of pizzas: small (+0), medium (+5), large (+10)
-  if (this.pizzaSize === "medium") {
+  if (this.size === "medium") {
     totalCost += 5;
-  } else if (this.pizzaSize === "large") {
+  } else if (this.size === "large") {
     totalCost += 10;
   } else {
     totalCost += 0;
