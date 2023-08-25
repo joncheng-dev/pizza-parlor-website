@@ -98,9 +98,21 @@ function userFormSubmissionHandler(event) {
   // A pizza request is made by the customer
   let aPizza = new Pizza(userPizzaSize);
   aPizza.toppings = userToppings;
-  console.log(aPizza);
   // Add pizza to the order
   customerOne.addPizzaToOrder(aPizza);
-
-  console.log(customerOne);
+  // Display results to User
+  const ulElementSize = document.createElement("ul");
+  const liElementSize = document.createElement("li");
+  liElementSize.append(aPizza.size + " size");
+  ulElementSize.append(liElementSize);
+  console.log(aPizza.size);
+  // Add each of the toppings
+  const ulElementToppings = document.createElement("ul");
+  aPizza.toppings.forEach(function (topping) {
+    const liElementTopping = document.createElement("li");
+    liElementTopping.append(topping);
+    ulElementToppings.append(liElementTopping);
+  });
+  document.getElementById("itemized-order").append(ulElementSize);
+  ulElementSize.append(ulElementToppings);
 }
