@@ -73,40 +73,46 @@ function getUserSelectedSize() {
   return userSelectedPizzaSize;
 }
 
-function displayPizzaItemized(addedPizza) {
-  // Set up elements for displaying information
-  const ulElementSize = document.createElement("ul");
-  const liElementSize = document.createElement("li");
-  // Display pizza size
-  liElementSize.append(addedPizza.size + " size");
-  ulElementSize.append(liElementSize);
-  // Display each of the toppings
-  const ulElementToppings = document.createElement("ul");
-  addedPizza.toppings.forEach(function (topping) {
-    const liElementTopping = document.createElement("li");
-    liElementTopping.append(topping);
-    ulElementToppings.append(liElementTopping);
-  });
-  // Create new row within id="dynamically-updated-div"
+function dynamicallyCreateRow(idToPlaceRow, infoForLeftColumn, infoForRightColumn) {
+  // Generate new row
   const dynamicallyAddedRow = document.createElement("div");
   dynamicallyAddedRow.setAttribute("class", "row");
-  document.getElementById("dynamically-updated-div").append(dynamicallyAddedRow);
-  // Generate a div of class col-6
-  const itemizedOrderDiv = document.createElement("div");
-  itemizedOrderDiv.setAttribute("class", "col-6");
-  dynamicallyAddedRow.append(itemizedOrderDiv);
-  // Generate a div of class col-6
-  const itemizedOrderCostDiv = document.createElement("div");
-  itemizedOrderCostDiv.setAttribute("class", "col-6");
-  dynamicallyAddedRow.append(itemizedOrderCostDiv);
-  // Add to div with id="dynamically-updated-div"
-  itemizedOrderDiv.append(ulElementSize);
-  ulElementSize.append(ulElementToppings);
-  // Display cost
+  document.getElementById(idToPlaceRow).append(dynamicallyAddedRow);
+  // Generate left column
+  const leftColumn = document.createElement("div");
+  leftColumn.setAttribute("class", "col-6");
+  dynamicallyAddedRow.append(leftColumn);
+  // Generate right column
+  const rightColumn = document.createElement("div");
+  rightColumn.setAttribute("class", "col-6");
+  dynamicallyAddedRow.append(rightColumn);
+  // Populate with information
+  leftColumn.append(infoForLeftColumn);
+  rightColumn.append(infoForRightColumn);
+}
+
+function displayPizzaItemized(addedPizza) {
+  // Create unordered list element for pizza details
+  const ulForDetails = document.createElement("ul");
+  // Size (create elements for & populate information)
+  const liForSize = document.createElement("li");
+  liForSize.append(addedPizza.size + " size");
+  // Toppings (create elements for & populate information)
+  const ulForToppings = document.createElement("ul");
+  addedPizza.toppings.forEach(function (topping) {
+    const liForOneTopping = document.createElement("li");
+    liForOneTopping.append(topping);
+    ulForToppings.append(liForOneTopping);
+  });
+  // Cost (calculate and create elements for)
+  const pForSubtotal = document.createElement("p");
   addedPizza.calculateCost();
-  const pElementSubtotalCost = document.createElement("p");
-  pElementSubtotalCost.append(addedPizza.cost);
-  itemizedOrderCostDiv.append(pElementSubtotalCost);
+  // Add the above information to details column
+  ulForDetails.append(liForSize);
+  ulForDetails.append(ulForToppings);
+  pForSubtotal.append(addedPizza.cost);
+  // Create div to dynamically update id="dynamically-updated-div"
+  dynamicallyCreateRow("dynamically-updated-div", ulForDetails, pForSubtotal);
 }
 
 window.addEventListener("load", formLoader);
