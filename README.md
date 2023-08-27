@@ -163,7 +163,7 @@ customerOne.addPizzaToOrder(pieSpecifications);
 customerOne.addPizzaToOrder(anotherPieToAdd);
 customerOne.calculateTotalCost();
 customerOne.totalCost;
-Expected Output: 20;
+Expected Output: 30;
 
 ```
 
