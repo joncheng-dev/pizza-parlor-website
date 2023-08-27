@@ -2,6 +2,7 @@
 function Order() {
   this.pizzas = {};
   this.currentId = 0;
+  this.totalCost = 0;
 }
 
 Order.prototype.assignId = function () {
@@ -91,7 +92,7 @@ function dynamicallyCreateRow(idToPlaceRow, infoForLeftColumn, infoForRightColum
   rightColumn.append(infoForRightColumn);
 }
 
-function displayPizzaItemized(addedPizza) {
+function displayPizzaDetails(addedPizza) {
   // Create unordered list element for pizza details
   const ulForDetails = document.createElement("ul");
   // Size (create elements for & populate information)
@@ -135,7 +136,8 @@ function userFormSubmissionHandler(event) {
   // Add pizza to the order
   customerOne.addPizzaToOrder(aPizza);
   // Display results to User
-  displayPizzaItemized(aPizza);
+  displayPizzaDetails(aPizza);
+  // document.getElementById("total-cost").append();
   // Resets form input
   document.getElementById("customize-pizza-form").reset();
 }

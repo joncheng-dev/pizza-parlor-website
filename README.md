@@ -33,12 +33,12 @@ let customerOne = new Order();
 typeof customerOne;
 Expected Output: object
 
-Test 2: "It should return an Order object containing a property 'this.pizzas', an empty object, and start with 'this.currentId' of value 0."
+Test 2: "It should return an Order object containing a property 'this.pizzas', an empty object, a property 'this.currentId' set to value 0, and a property 'this.totalCost' set to value 0."
 Code:
 let customerOne = new Order();
 customerOne;
 Expected Output:
-Order {pizzas: {...}, currentId = 0;}
+Order {pizzas: {...}, currentId = 0, totalCost = 0}
 
 
 Describe: Pizza object constructor
