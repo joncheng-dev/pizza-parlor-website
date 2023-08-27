@@ -125,6 +125,11 @@ function displayPizzaDetails(addedPizza) {
   dynamicallyCreateRow("dynamically-updated-div", ulForDetails, pForSubtotal);
 }
 
+function displayTotalCost(customerOrder) {
+  customerOrder.calculateTotalCost();
+  document.getElementById("total-cost").innerText(customerOrder.totalCost);
+}
+
 window.addEventListener("load", formLoader);
 
 function formLoader() {
@@ -146,7 +151,7 @@ function userFormSubmissionHandler(event) {
   customerOne.addPizzaToOrder(aPizza);
   // Display results to User
   displayPizzaDetails(aPizza);
-  // document.getElementById("total-cost").append();
+  // displayTotalCost(customerOne);
   // Resets form input
   document.getElementById("customize-pizza-form").reset();
 }
