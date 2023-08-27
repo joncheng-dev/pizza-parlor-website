@@ -31,6 +31,15 @@ Order.prototype.deletePizzaFromOrder = function (id) {
   return true;
 };
 
+Order.prototype.calculateTotalCost = function () {
+  let listOfPizzas = this.pizzas;
+  let calculatedTotal = 0;
+  Object.keys(listOfPizzas).forEach(function (key) {
+    calculatedTotal += listOfPizzas[key].cost;
+  });
+  this.totalCost = calculatedTotal;
+};
+
 // Business Logic for Pizzas
 function Pizza(pizzaSize) {
   this.toppings = [];
