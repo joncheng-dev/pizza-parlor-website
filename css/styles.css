@@ -2,10 +2,6 @@ body {
   background-color: teal;
 }
 
-#itemized-order {
-  background-color: lightpink;
-}
-
 .col-8 {
   background-color: lightgray;
   border: 1px black dotted;
@@ -14,4 +10,12 @@ body {
 .col-4 {
   background-color: lightcyan;
   border: 1px black dotted;
+}
+
+#customer-results-div {
+  background-color: #d4e2d4;
+}
+
+#dynamically-updated-div {
+  background-color: lightpink;
 }

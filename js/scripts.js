@@ -87,13 +87,26 @@ function displayPizzaItemized(addedPizza) {
     liElementTopping.append(topping);
     ulElementToppings.append(liElementTopping);
   });
-  document.getElementById("itemized-order").append(ulElementSize);
+  // Create new row within id="dynamically-updated-div"
+  const dynamicallyAddedRow = document.createElement("div");
+  dynamicallyAddedRow.setAttribute("class", "row");
+  document.getElementById("dynamically-updated-div").append(dynamicallyAddedRow);
+  // Generate a div of class col-6
+  const itemizedOrderDiv = document.createElement("div");
+  itemizedOrderDiv.setAttribute("class", "col-6");
+  dynamicallyAddedRow.append(itemizedOrderDiv);
+  // Generate a div of class col-6
+  const itemizedOrderCostDiv = document.createElement("div");
+  itemizedOrderCostDiv.setAttribute("class", "col-6");
+  dynamicallyAddedRow.append(itemizedOrderCostDiv);
+  // Add to div with id="dynamically-updated-div"
+  itemizedOrderDiv.append(ulElementSize);
   ulElementSize.append(ulElementToppings);
   // Display cost
   addedPizza.calculateCost();
   const pElementSubtotalCost = document.createElement("p");
   pElementSubtotalCost.append(addedPizza.cost);
-  document.getElementById("itemized-order-cost").append(pElementSubtotalCost);
+  itemizedOrderCostDiv.append(pElementSubtotalCost);
 }
 
 window.addEventListener("load", formLoader);

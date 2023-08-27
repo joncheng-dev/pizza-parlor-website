@@ -21,7 +21,7 @@
       </div>
       <br />
       <div class="row">
-        <div class="col-8">
+        <div class="col-8" id="customer-input-div">
           <h3>Create Your Own Pizza!</h3>
           <form id="customize-pizza-form">
             <div class="row">
@@ -80,7 +80,7 @@
             </div>
           </form>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="customer-results-div">
           <h3>My Order</h3>
           <p>My Items</p>
           <div class="row">
@@ -90,13 +90,8 @@
             <div class="col-6">
               <p>Cost</p>
             </div>
-            <div class="col-6">
-              <div id="itemized-order"></div>
-            </div>
-            <div class="col-6">
-              <div id="itemized-order-cost"></div>
-            </div>
           </div>
+          <div id="dynamically-updated-div"></div>
           <div class="row">
             <h5>Total</h5>
           </div>
@@ -108,3 +103,10 @@
     </div>
   </body>
 </html>
+
+<!-- <div class="col-6">
+  <div id="itemized-order"></div>
+</div>
+<div class="col-6">
+  <div id="itemized-order-cost"></div>
+</div> -->
