@@ -146,6 +146,25 @@ true;
 
 Then if we call customerOne again, it will be:
 Order {pizzas = {...}, currentId = 1};
+
+
+Describe: Order.prototype.calculateTotalCost
+
+Test 1: "It will add up all pizza costs in 'this.pizzas', and set the value of 'this.totalCost' to the sum."
+Code:
+let customerOne = new Order();
+let pieSpecifications = new Pizza("medium");
+pieSpecifications.toppings = ["mushrooms", "olives"];
+pieSpecifications.calculateCost();
+let anotherPieToAdd = new Pizza("large");
+anotherPieToAdd.toppings = ["pepperoni", "pineapple", "spinach"];
+anotherPieToAdd.calculateCost();
+customerOne.addPizzaToOrder(pieSpecifications);
+customerOne.addPizzaToOrder(anotherPieToAdd);
+customerOne.calculateTotalCost();
+customerOne.totalCost;
+Expected Output: 20;
+
 ```
 
 ## Known Bugs
