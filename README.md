@@ -170,9 +170,9 @@ Expected Output: 30;
 ## Known Bugs
 
 - _Currently viewing is not optimized for mobile._
-- _After clicking submit, cost column does not line up with itemized pizza entry under "My Order"._
-- _Checkout button currently does not work._
 - _Quantity is currently hard coded as 1._
+- _Customer "Total" display does not currently display anything._
+- _Checkout button currently not functional._
 
 ## License
 

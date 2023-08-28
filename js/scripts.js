@@ -15,6 +15,7 @@ Order.prototype.addPizzaToOrder = function (pizzaSpecification) {
   this.pizzas[pizzaSpecification.id] = pizzaSpecification;
 };
 
+// Not currently used at this stage in development
 Order.prototype.selectPizzaById = function (id) {
   if (this.pizzas[id] === undefined) {
     return false;
@@ -23,6 +24,7 @@ Order.prototype.selectPizzaById = function (id) {
   }
 };
 
+// Not currently used at this stage in development
 Order.prototype.deletePizzaFromOrder = function (id) {
   if (this.pizzas[id] === undefined) {
     return false;
@@ -109,11 +111,19 @@ function displayPizzaDetails(addedPizza) {
   liForSize.append(addedPizza.size + " size");
   // Toppings (create elements for & populate information)
   const ulForToppings = document.createElement("ul");
-  addedPizza.toppings.forEach(function (topping) {
-    const liForOneTopping = document.createElement("li");
-    liForOneTopping.append(topping);
-    ulForToppings.append(liForOneTopping);
-  });
+  // -- if user selected no toppings
+  if (addedPizza.toppings.length === 0) {
+    const liForATopping = document.createElement("li");
+    liForATopping.append("cheese");
+    ulForToppings.append(liForATopping);
+  } else {
+    // -- if user selected at least one topping
+    addedPizza.toppings.forEach(function (topping) {
+      const liForATopping = document.createElement("li");
+      liForATopping.append(topping);
+      ulForToppings.append(liForATopping);
+    });
+  }
   // Cost (calculate and create elements for)
   const pForSubtotal = document.createElement("p");
   addedPizza.calculateCost();
@@ -125,9 +135,10 @@ function displayPizzaDetails(addedPizza) {
   dynamicallyCreateRow("dynamically-updated-div", ulForDetails, pForSubtotal);
 }
 
+// Function displayTotalCost is currently not used because it's not functioning as expected.
 function displayTotalCost(customerOrder) {
   customerOrder.calculateTotalCost();
-  document.getElementById("total-cost").innerText(customerOrder.totalCost);
+  document.getElementById("total-cost").append(customerOrder.totalCost);
 }
 
 window.addEventListener("load", formLoader);
@@ -141,7 +152,7 @@ function userFormSubmissionHandler(event) {
   event.preventDefault();
   //Initialize new object to hold pizza instances. If expand functionality later, allow for more customers
   let customerOne = new Order();
-  // Get user input from form
+  // Get user input from forms
   let userToppings = getUserSelectedToppings();
   const userPizzaSize = getUserSelectedSize();
   // A pizza request is made by the customer
@@ -149,9 +160,8 @@ function userFormSubmissionHandler(event) {
   aPizza.toppings = userToppings;
   // Add pizza to the order
   customerOne.addPizzaToOrder(aPizza);
-  // Display results to User
+  // Display results to User -- Total is currently omitted because it's not functioning correctly.
   displayPizzaDetails(aPizza);
-  // displayTotalCost(customerOne);
   // Resets form input
   document.getElementById("customize-pizza-form").reset();
 }
